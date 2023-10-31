@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class z4 : MonoBehaviour
+public class Lab3z4 : MonoBehaviour
 {
     public float speed = 2.0f;
     Rigidbody rb;

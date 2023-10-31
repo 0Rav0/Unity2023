@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class z5 : MonoBehaviour
+public class Lab3z5 : MonoBehaviour
 {
     public GameObject Cube;
     HashSet<Vector3> spawnPoints = new HashSet<Vector3>();

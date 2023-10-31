@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class z6_Lerp : MonoBehaviour
+public class Lab3z6_Lerp : MonoBehaviour
 {
     public float minimum = -1.0F;
     public float maximum = 1.0F;

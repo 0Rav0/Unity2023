@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class z6_SmoothDamp : MonoBehaviour
+public class Lab3z6_SmoothDamp : MonoBehaviour
 {
     public Transform target;
     public float smoothTime = 2.0f;

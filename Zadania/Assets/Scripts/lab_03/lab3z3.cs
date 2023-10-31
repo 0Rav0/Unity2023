@@ -4,7 +4,7 @@ using System.Threading;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class z3 : MonoBehaviour
+public class Lab3z3 : MonoBehaviour
 {
     public float speed = 2.0f;
 

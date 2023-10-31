@@ -121,7 +121,7 @@ GameObject:
   - component: {fileID: 5210712471667368377}
   - component: {fileID: 5115162565640524881}
   m_Layer: 0
-  m_Name: Cube_z3
+  m_Name: Lab3_Cube_z3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
