@@ -2,10 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LookAroundLab4 : MonoBehaviour
+public class LookAround : MonoBehaviour
 {
-    // ruch wokó³ osi Y bêdzie wykonywany na obiekcie gracza, wiêc
-    // potrzebna nam referencja do niego (konkretnie jego komponentu Transform)
     public Transform player;
 
     public float sensitivity = 200f;
@@ -23,7 +21,6 @@ public class LookAroundLab4 : MonoBehaviour
         // pobieramy wartoœci dla obu osi ruchu myszy
         mouseXMove += Input.GetAxis("Mouse X") * sensitivity * Time.deltaTime;
         mouseYMove += Input.GetAxis("Mouse Y") * sensitivity * Time.deltaTime;
-        mouseXMove = Mathf.Clamp(mouseXMove, -90f, 90f);
         mouseYMove = Mathf.Clamp(mouseYMove, -90f, 90f);
         // wykonujemy rotacjê wokó³ osi Y
         player.transform.rotation = Quaternion.Euler(0f, mouseXMove, 0f);
