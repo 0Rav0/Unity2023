@@ -14,7 +14,8 @@ public class GameManager : MonoBehaviour
 
     public int ColorIndex = 0;
     public int PlatformsIndex = 0;
-    public int Level = 0;
+    public int minLevel = 0;
+    public int maxLevel = 0;
 
     public GameObject NextPlatform = null;
     public GameObject CurrentPlatform = null;
@@ -71,56 +72,73 @@ public class GameManager : MonoBehaviour
         switch(PlatformsIndex)
         {
             case 0:
-                Level = 1;
+                minLevel = 0;
+                maxLevel = 1;
                 minGap = 0;
-                maxGap = 3;
+                maxGap = 2;
                 break;
             case int i when i > 0 && i <= 2:
-                Level = 2;
+                minLevel = 0;
+                maxLevel = 2;
                 minGap = 0;
                 maxGap = 3;
                 break;
             case int i when i > 2 && i <= 4:
-                Level = 3;
+                minLevel = 0;
+                maxLevel = 3;
                 minGap = 1;
-                maxGap = 4;
+                maxGap = 3;
                 break;
             case int i when i > 4 && i <= 6:
-                Level = 4;
+                minLevel = 0;
+                maxLevel = 4;
                 minGap = 1;
                 maxGap = 4;
                 break;
             case int i when i > 6 && i <= 8:
-                Level = 5;
-                minGap = 1;
-                maxGap = 5;
+                minLevel = 1;
+                maxLevel = 5;
+                minGap = 2;
+                maxGap = 4;
                 break;
             case int i when i > 8 && i <= 10:
-                Level = 6;
+                minLevel = 1;
+                maxLevel = 6;
                 minGap = 2;
                 maxGap = 5;
                 break;
             case int i when i > 10 && i <= 12:
-                Level = 7;
-                minGap = 2;
+                minLevel = 1;
+                maxLevel = 7;
+                minGap = 3;
                 maxGap = 5;
                 break;
-            case int i when i > 12:
-                Level = 8;
+            case int i when i > 12 && i <=14:
+                minLevel = 2;
+                maxLevel = 8;
                 minGap = 3;
+                maxGap = 6;
+                break;
+            case int i when i > 14 && i <= 16:
+                minLevel = 2;
+                maxLevel = 9;
+                minGap = 4;
+                maxGap = 6;
+                break;
+            case int i when i > 16:
+                minLevel = 2;
+                maxLevel = 9;
+                minGap = 5;
                 maxGap = 6;
                 break;
             default: break;
         }
 
         //Debug.Log("min: " + minGap + " max:" + maxGap);
-        GameObject platform = PlatformsList[(Random.Range(0, Level))];
-        
+        GameObject platform = PlatformsList[(Random.Range(minLevel, maxLevel))];
         float gap = CurrentPlatform.transform.localScale.z / 2 + platform.transform.localScale.z / 2 + Random.Range(minGap, maxGap);
-
         NextPlatform = Instantiate(platform, new Vector3(CurrentPlatform.transform.position.x, 0, CurrentPlatform.transform.position.z + gap), Quaternion.identity);
-
-        NextPlatform.GetComponent<Renderer>().material.color = Colors[ColorIndex];
+        NextPlatform.GetComponent<Renderer>().material.color = Colors[ColorIndex];       
 
         if (ColorIndex == 0)
             ColorIndex = 1;

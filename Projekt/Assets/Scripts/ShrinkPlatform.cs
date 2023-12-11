@@ -20,7 +20,7 @@ public class ShrinkPlatform : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             time -= Time.deltaTime;
-            transform.localScale -= new Vector3(Time.deltaTime * 3f, 0, 0);
+            transform.localScale -= new Vector3(Time.deltaTime * 3.5f, 0, 0);
             if (transform.localScale.x < 0.1)
             {
                 GameObject.Find("GameManager").GetComponent<GameManager>().PlatformDestroyed(this.gameObject);

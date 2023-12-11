@@ -19,7 +19,7 @@ public class SpeedPlatform : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            collision.gameObject.GetComponent<Rigidbody>().AddForce(new Vector3(0f, 0f, 20f));
+            collision.gameObject.GetComponent<Rigidbody>().AddForce(new Vector3(0f, 0f, 15f));
         }
     }
 

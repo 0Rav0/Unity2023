@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 2011470589918979214}
   - component: {fileID: 2936700210492947323}
   - component: {fileID: 8138379500750925773}
-  - component: {fileID: 2927844162070512143}
   - component: {fileID: -5741207904144767691}
   - component: {fileID: 284807366095412601}
   - component: {fileID: 6340412099173987921}
@@ -32,7 +31,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 15, y: 1, z: 40}
+  m_LocalScale: {x: 15, y: 1, z: 30}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -87,22 +86,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &2927844162070512143
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5676884251479720744}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 392bd67072c4bf34c934b441d8ad3f57, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Point: {fileID: 5247580470671461527, guid: d7203458e2870db4292e1e44f250f3ce, type: 3}
-  SpawnPoint: {x: 0, y: 0, z: 0}
-  sizeX: 0
-  sizeZ: 0
 --- !u!114 &-5741207904144767691
 MonoBehaviour:
   m_ObjectHideFlags: 0

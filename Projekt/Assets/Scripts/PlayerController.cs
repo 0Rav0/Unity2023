@@ -133,7 +133,7 @@ public class PlayerController : MonoBehaviour
 
         LifeText.text = Life.ToString();
         PointsText.text = Points.ToString();
-        ScoreText.text = Score.ToString();
+        ScoreText.text = Score.ToString() + "/" + PlayerPrefs.GetInt("HighScore");
     }
 
     public void DealDamage()
@@ -241,7 +241,7 @@ public class PlayerController : MonoBehaviour
             if (gm.UpdatePlatforms(collision.gameObject))
             {
                 Score++;
-                ScoreText.text = Score.ToString();
+                ScoreText.text = Score.ToString() + "/" + PlayerPrefs.GetInt("Highscore");
             }
         }
     }

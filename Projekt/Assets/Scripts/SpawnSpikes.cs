@@ -5,35 +5,29 @@ using UnityEngine;
 public class SpawnSpikes : MonoBehaviour
 {
     public GameObject SpikePrefab;
-    List<Vector3> spawnPoints = new ();
+    public List<Vector3> spikePoints = new();
 
-    void Start()
+    private void Awake()
     {
-        int posX = (int)transform.position.x;
-        int posZ = (int)transform.position.z;
-
-        while (spawnPoints.Count < 2)
+        foreach (Transform child in transform)
         {
-            bool isOk = true;
-            Vector3 spawnPoint = new Vector3(Random.Range(posX - 4, posX + 4), 0.1f, Random.Range(posZ - 4, posZ + 4));
-
-            foreach(var pos in spawnPoints)
-            {
-                if(pos.x == spawnPoint.x || pos.z == spawnPoint.z)
-                {
-                    isOk = false;
-                    break;
-                }
-            }
-
-            if(isOk)
-                spawnPoints.Add(spawnPoint);
+            if (child.gameObject.CompareTag("spikePoint"))
+                spikePoints.Add(child.transform.position);
         }
 
-        foreach (var spawnPoint in spawnPoints)
+        int amount = 0;
+
+        if (spikePoints.Count > 1)
+            amount = Random.Range(1, 3);
+        else
+            amount = 1;
+
+
+        for (int i = 0; i < amount; i++)
         {
-            GameObject Spike = Instantiate(SpikePrefab, spawnPoint, Quaternion.identity);
-            Spike.transform.SetParent(transform, true);
+            GameObject point = Instantiate(SpikePrefab, spikePoints[Random.Range(0, spikePoints.Count)], Quaternion.identity);
+            spikePoints.RemoveAt(i);
+            point.transform.SetParent(this.transform, true);
         }
     }
 }
